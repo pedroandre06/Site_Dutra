@@ -218,17 +218,6 @@ header.solid,header.om{background:rgba(26,11,10,.78)!important}
 .it{border-radius:8px;box-shadow:0 10px 28px -16px rgba(26,11,10,.4);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
 .it:hover,.it:focus-visible{transform:translateY(-8px);box-shadow:0 28px 46px -20px rgba(26,11,10,.55)}
 .gal button,.pv{border-radius:8px}
-.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.tc{position:relative;margin:0;padding:38px 32px 30px;border-radius:10px;color:#f0e4d4;background:linear-gradient(160deg,#34121d,#1a0b0a);border:1px solid rgba(212,175,55,.38);box-shadow:0 18px 40px -22px rgba(26,11,10,.7);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
-.tc:hover{transform:translateY(-6px);box-shadow:0 30px 50px -22px rgba(26,11,10,.8)}
-.tc:before{content:"\201C";position:absolute;top:6px;right:24px;font:400 6rem/1 var(--serif);color:rgba(212,175,55,.28)}
-.stars{color:var(--gold);letter-spacing:5px;font-size:1.1rem;margin:14px 0 16px}
-.tc blockquote{font:italic 400 1.35rem/1.4 var(--serif);margin:0 0 24px}
-.tc figcaption{display:flex;flex-direction:column;gap:2px;border-top:1px solid rgba(212,175,55,.3);padding-top:16px}
-.tc figcaption b{color:var(--gold);font-weight:600;font-size:.92rem;letter-spacing:.06em}
-.tc figcaption span{font-size:.82rem;color:#c3b0a6}
-.tc .ex{position:absolute;top:14px;left:18px;font-size:.66rem;font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:#c3b0a6;border:1px dashed rgba(212,175,55,.5);padding:2px 8px;border-radius:99px}
-@media(max-width:900px){.tg{grid-template-columns:1fr}}
 .perks{list-style:none;padding:0;margin:0 0 34px;display:grid;gap:10px;color:#e8d9c8}
 .perks li:before{content:"\2713";color:var(--gold);margin-right:12px;font-weight:600}
 form.glass{padding:38px 34px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
@@ -239,6 +228,19 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold);background:rgba
 form .cta-g{width:100%;justify-content:space-between;grid-column:1/-1}
 .fine{font-size:.8rem;color:#b9a69b;text-align:center;margin-top:-8px}
 @media(max-width:560px){form.glass{padding:26px 20px}}
+
+/* v9: topo limpo e hero cabendo na primeira tela */
+header:not(.solid):not(.om){background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,0))!important;backdrop-filter:none;-webkit-backdrop-filter:none;border-bottom-color:transparent}
+.nav{height:78px}
+.menu{gap:clamp(18px,2.2vw,34px)}
+.hero{padding:clamp(92px,13vh,120px) 0 clamp(28px,5vh,56px)}
+.hero .brand{margin-bottom:clamp(12px,2.6vh,28px)}
+.hero .bn{font-size:clamp(2.2rem,min(6vw,9vh),4.4rem)}
+.hero h1{font-size:clamp(2.7rem,min(7vw,10.5vh),6.2rem);line-height:.98;margin-bottom:clamp(14px,2.6vh,26px)}
+.hero p{margin-bottom:clamp(18px,3.2vh,30px)}
+.hero .trust{margin-top:clamp(14px,2.6vh,26px)}
+@media(max-height:780px) and (min-width:901px){.hero .trust{display:none}}
+@media(max-width:900px){.hero{padding-top:96px}.hero h1{font-size:clamp(2.6rem,12vw,4rem)}}
 </style>
 </head>
 <body>
@@ -251,7 +253,7 @@ form .cta-g{width:100%;justify-content:space-between;grid-column:1/-1}
 <header id="hd"><div class="wrap nav">
 <a class="logo" href="#inicio" aria-label="Dutra Festa, início"><svg class="lm" viewBox="0 0 120 120"><use href="#mark"/></svg><span>Dutra Festa</span></a>
 <button class="burger" id="bg" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
-<nav class="menu" id="mn"><a href="#catalogo">Decorações</a><a href="#colecoes">Coleções</a><a href="#portfolio">Inspirações</a><a href="#sobre">Sobre</a><a href="#depoimentos">Depoimentos</a><a href="#orcamento">Contato</a><a class="cta" href="#orcamento">ORÇAMENTO</a></nav>
+<nav class="menu" id="mn"><a href="#catalogo">Decorações</a><a href="#colecoes">Coleções</a><a href="#portfolio">Inspirações</a><a href="#sobre">Sobre</a><a href="#orcamento">Contato</a><a class="cta" href="#orcamento">ORÇAMENTO</a></nav>
 </div></header>
 <main>
 <section class="hero" id="inicio">
@@ -310,12 +312,6 @@ form .cta-g{width:100%;justify-content:space-between;grid-column:1/-1}
 <ul class="svc"><li>Decoração temática personalizada</li><li>Mesa de doces e bolo decorado</li><li>Arranjos florais exclusivos</li><li>Balões e painéis cenográficos</li><li>Locação de mobiliário de luxo</li><li>Iluminação e cenografia</li><li>Festas infantis e adultas</li><li>Eventos corporativos</li><li>Lembrancinhas personalizadas</li></ul>
 </div></div></section>
 
-<section class="sd" id="depoimentos"><div class="wrap">
-<h2 class="rv">O que dizem nossos clientes</h2>
-<p class="lead rv">Quem celebra com a Dutra Festa.</p>
-<!-- EDITAR: substitua os depoimentos de exemplo (lista TESTI no script) por avaliações reais de clientes -->
-<div class="tg rv" id="tg"></div>
-</div></section>
 
 <section class="dk" id="orcamento"><div class="wrap q">
 <div><h2 class="rv">Vamos criar algo especial?</h2><p class="lead rv">Conte o que você imagina. Respondemos com disponibilidade e valores.</p>
@@ -370,10 +366,6 @@ const ITEMS=[
 {k:"m3",n:"Mesas e Cadeiras para Casamento",c:"Mesas e cadeiras",f:["mesa","cas"],d:"Conjunto de mesas e cadeiras para recepções e cerimônias, com montagem no local."},
 {k:"m4",n:"Mesas e Cadeiras ao Ar Livre",c:"Mesas e cadeiras",f:["mesa","corp"],z:"w2",d:"Mesas, cadeiras e tendas para eventos ao ar livre."}];
 const COLS=[["cas","Casamentos","c1","Palcos, mesas e arranjos florais para a cerimônia e a recepção."],["q15","15 Anos","q1","Balões, flores e mesas de doces para a festa de debutante."],["inf","Infantil de Luxo","jardim","Balões, painéis e mesas cheias de personalidade."],["corp","Corporativo","t7","Cenários, painéis e mesas para eventos e confraternizações."],["mesa","Mesas e Cadeiras","m1","Locação de mesas e cadeiras para qualquer evento."]];
-const TESTI=[
-{n:"Nome do cliente",e:"Casamento",s:5,t:"Exemplo: cole aqui o depoimento real de um cliente sobre a decoração e o atendimento.",ex:1},
-{n:"Nome do cliente",e:"Festa de 15 anos",s:5,t:"Exemplo: cole aqui o depoimento real de um cliente sobre a decoração e o atendimento.",ex:1},
-{n:"Nome do cliente",e:"Evento corporativo",s:5,t:"Exemplo: cole aqui o depoimento real de um cliente sobre a decoração e o atendimento.",ex:1}];
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 const wa=t=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
 $$("[data-wa]").forEach(a=>{a.href=wa("Olá! Vi o catálogo de decorações no site e gostaria de solicitar um orçamento.");a.target="_blank";a.rel="noopener"});
@@ -394,8 +386,6 @@ function lk(){$("#lk").innerHTML=ITEMS.map((i,x)=>[i,x]).filter(([i])=>filtro=="
 $("#chips").onclick=e=>{const b=e.target.closest("[data-c]");if(!b)return;filtro=b.dataset.c;chips();lk()};
 chips();lk();
 
-/* depoimentos */
-$("#tg").innerHTML=TESTI.map(t=>`<figure class="tc"><div class="stars" role="img" aria-label="${t.s} de 5 estrelas">${"★".repeat(t.s)}${"☆".repeat(5-t.s)}</div><blockquote>${t.t}</blockquote><figcaption><b>${t.n}</b><span>${t.e}</span></figcaption>${t.ex?'<em class="ex">Exemplo</em>':""}</figure>`).join("");
 
 /* modal de detalhes */
 const md=$("#md");
