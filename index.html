@@ -241,6 +241,29 @@ header:not(.solid):not(.om){background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,
 .hero .trust{margin-top:clamp(14px,2.6vh,26px)}
 @media(max-height:780px) and (min-width:901px){.hero .trust{display:none}}
 @media(max-width:900px){.hero{padding-top:96px}.hero h1{font-size:clamp(2.6rem,12vw,4rem)}}
+
+/* v10: topo legível (contraste) + menu mobile corrigido */
+header:not(.solid):not(.om){background:linear-gradient(rgba(10,4,5,.88),rgba(10,4,5,.5) 70%,rgba(10,4,5,0))!important}
+header.solid,header.om{background:rgba(18,7,8,.96)!important;border-bottom:1px solid rgba(212,175,55,.35)}
+.menu a:not(.cta){color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.85)}
+.menu .cta{background:var(--gold);border-color:var(--gold);color:var(--ink);text-shadow:none;font-weight:700}
+.menu .cta:hover{background:#e3c25a;color:var(--ink)}
+.logo{position:relative;z-index:60}
+.burger{position:relative;z-index:60;width:48px;height:48px;padding:0;border:1.5px solid var(--gold);border-radius:50%;background:rgba(18,7,8,.65);color:var(--gold);-webkit-tap-highlight-color:transparent}
+.burger span{width:22px;height:2px;background:var(--gold);margin:6px auto}
+.om .burger span:first-child{transform:translateY(4px) rotate(45deg)}
+.om .burger span:last-child{transform:translateY(-4px) rotate(-45deg)}
+@media(max-width:900px){
+/* backdrop-filter no header prendia o menu fixed dentro dos 78px do topo */
+header,header.solid,header.om{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.menu{z-index:55;height:100vh;height:100dvh;overflow-y:auto;background:linear-gradient(160deg,#1a0b0a 0%,#34121d 100%);padding:100px 28px 40px;gap:0}
+.menu a:not(.cta){width:100%;color:#fff;text-shadow:none;font-size:2.1rem;padding:14px 0;border-bottom:1px solid rgba(212,175,55,.22)}
+.menu a:not(.cta):active{color:var(--gold)}
+.menu .cta{width:100%;justify-content:center;margin-top:28px;min-height:56px;font-size:.9rem}
+.hero:after{background:linear-gradient(0deg,rgba(10,4,5,.9) 0%,rgba(10,4,5,.62) 55%,rgba(10,4,5,.55) 100%)}
+.hero h1,.hero p,.hero .trust{text-shadow:0 2px 14px rgba(0,0,0,.8)}
+.hero .btns .cta{width:100%;justify-content:space-between}
+}
 </style>
 </head>
 <body>
