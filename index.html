@@ -113,7 +113,7 @@ header{z-index:50}}
 .det h2{font-size:clamp(3.2rem,8vw,7rem);font-weight:400}
 .det p{color:#c3b0a6;max-width:40ch}
 .det .im{position:relative;overflow:hidden}
-.det .im>img{width:100%;height:112%;object-fit:cover;position:absolute;top:-6%;left:0}
+.det .im>img,.det .im>video{width:100%;height:112%;object-fit:cover;position:absolute;top:-6%;left:0}
 .det .sm{position:absolute;z-index:2;left:-70px;bottom:60px;width:210px;aspect-ratio:1;border:8px solid var(--ink);overflow:hidden}
 .det .sm img{width:100%;height:100%;object-fit:cover}
 @media(max-width:900px){.det{grid-template-columns:1fr}.det .im{min-height:70vh}.det .sm{left:18px;width:140px;border-width:6px}.det .t{padding:80px 24px}}
@@ -294,7 +294,7 @@ header,header.solid,header.om{backdrop-filter:none!important;-webkit-backdrop-fi
 
 <section id="colecoes"><div class="wrap">
 <div class="hd2"><h2 class="rv">Nossas coleções</h2></div>
-<p class="lead rv">Cinco universos de decoração e locação. Escolha um para ver as peças.</p>
+<p class="lead rv">Três universos de decoração e locação. Escolha um para ver as peças.</p>
 <div class="cols rv"><div class="list" id="list"></div><div class="pv"><img id="pvi" alt=""></div></div>
 </div></section>
 
@@ -307,7 +307,7 @@ header,header.solid,header.om{backdrop-filter:none!important;-webkit-backdrop-fi
 
 <section class="dk det">
 <div class="t"><h2 class="rv">Cada detalhe conta.</h2><p class="rv">Flores, bandejas, suportes, painéis e iluminação: cada peça entra na composição para que a mesa faça sentido como um todo.</p><div class="rv" style="margin-top:26px"><a class="cta cta-l" href="#orcamento">CONTE SOBRE SEU EVENTO <i>→</i></a></div></div>
-<div class="im"><img id="dimg" data-i="jardim" alt="Decoração infantil Rei Leão" loading="lazy"><div class="sm"><img data-i="t3" alt="Aparador dourado com flores" loading="lazy"></div></div>
+<div class="im"><video id="dimg" autoplay muted loop playsinline preload="metadata" poster="poster.jpeg" aria-label="Vídeo da decoração de aniversário com tema Unicorn Birthday"><source src="Unicorn_birthday_party_setup_20261012000139.mp4" type="video/mp4"></video></div>
 </section>
 
 <section id="portfolio"><div class="wrap">
@@ -360,35 +360,29 @@ header,header.solid,header.om{backdrop-filter:none!important;-webkit-backdrop-fi
 <script>
 /* CONFIGURAÇÃO: troque o número do WhatsApp (DDI + DDD + número, só dígitos) */
 const CONFIG={whatsapp:"5521987814539"};
-const IMG={bela:"https://images.unsplash.com/photo-1653821355736-0c2598d0a63e?auto=format&fit=crop&w=1400&q=80",jardim:"./infantil-1.jpg",t1:"https://images.unsplash.com/photo-1653821355692-03666613499f?auto=format&fit=crop&w=1400&q=80",t2:"https://images.unsplash.com/photo-1747115276395-607f2e5dc269?auto=format&fit=crop&w=1400&q=80",t3:"https://images.unsplash.com/photo-1653821355168-144695e5c0e6?auto=format&fit=crop&w=1400&q=80",t4:"https://images.unsplash.com/photo-1759124650320-d629a3d73d9f?auto=format&fit=crop&w=1400&q=80",t5:"./infantil-2.jpg",t6:"https://images.unsplash.com/photo-1772127822514-682aeffcc0d3?auto=format&fit=crop&w=1400&q=80",t7:"https://images.unsplash.com/photo-1598622443054-499119043e82?auto=format&fit=crop&w=1400&q=80",c1:"https://images.unsplash.com/photo-1745573674471-e057af420757?auto=format&fit=crop&w=1400&q=80",c2:"https://images.unsplash.com/photo-1772127822525-7eda37383b9f?auto=format&fit=crop&w=1400&q=80",c3:"https://images.unsplash.com/photo-1712314947761-a8d718bd8c32?auto=format&fit=crop&w=1400&q=80",c4:"https://images.unsplash.com/photo-1524777313293-86d2ab467344?auto=format&fit=crop&w=1400&q=80",q1:"./15anos-2.jpg",q2:"./15anos-2.jpg",q3:"./15anos-3.jpeg",m1:"https://images.unsplash.com/photo-1723832348105-2e69f948135a?auto=format&fit=crop&w=1400&q=80",m2:"https://images.unsplash.com/photo-1707333514312-39cf7658479c?auto=format&fit=crop&w=1400&q=80",m3:"https://images.unsplash.com/photo-1665607437981-973dcd6a22bb?auto=format&fit=crop&w=1400&q=80",m4:"https://images.unsplash.com/photo-1780682568331-2bc7318210ce?auto=format&fit=crop&w=1400&q=80"};
+const IMG={jardim:"./infantil-1.jpg",t5:"./infantil-2.jpg",q1:"./15anos-2.jpg",q2:"./15anos-2.jpg",q3:"./15anos-3.jpeg"};
 IMG.q4="./15anos-4.jpeg";
 IMG.q5="./15anos-5.jpeg";IMG.w1="./casamento-1.jpeg";IMG.w2="./casamento-2.jpeg";IMG.w3="./casamento3.jpeg";
-const CATS=[["all","Todos"],["cas","Casamentos"],["q15","15 Anos"],["inf","Infantil de Luxo"],["corp","Corporativo"],["mesa","Mesas e Cadeiras"]];
+IMG.q6="./15anos 6.jpeg";IMG.q7="./15anos6.jpeg";IMG.q8="./15anos7.jpeg";IMG.q9="./15anos8.jpeg";IMG.q10="./15anos-3.jpg";IMG.w4="./casamento4.jpeg";
+const CATS=[["all","Todos"],["cas","Casamentos"],["q15","15 Anos"],["inf","Infantil de Luxo"]];
 const ITEMS=[
-{k:"c1",n:"Palco de Casamento com Flores",c:"Casamentos",f:["cas"],z:"w2",d:"Cenário de cerimônia com arranjos florais volumosos, ideal para casamentos e renovação de votos."},
-{k:"c2",n:"Recepção ao Ar Livre",c:"Casamentos",f:["cas"],d:"Mesas elegantes sob cobertura drapeada, com composição clara e romântica."},
-{k:"c3",n:"Salão com Lustres",c:"Casamentos",f:["cas"],z:"h2",d:"Salão de recepção com mesas postas, lustres e iluminação para um casamento sofisticado."},
-{k:"c4",n:"Mesa com Flores e Velas",c:"Casamentos",f:["cas"],d:"Arranjos coloridos, castiçais e velas para mesas de convidados e mesa principal."},
 {k:"w1",n:"Mesa de Casamento Clássica",c:"Casamentos",f:["cas"],z:"w2",d:"Bolo de casamento com arranjos florais em tons de rosa e dourado."},
 {k:"w2",n:"Bolo de Casamento com Flores",c:"Casamentos",f:["cas"],d:"Bolo branco decorado com flores em um cenário romântico de casamento."},
 {k:"w3",n:"Mesa de Doces para Casamento",c:"Casamentos",f:["cas"],d:"Mesa rústica com doces, flores e decoração delicada para casamento."},
+{k:"w4",n:"Mesa de Casamento com Flores e Bolo",c:"Casamentos",f:["cas"],d:"Mesa rústica para casamento com bolo branco, arranjos florais em tons de rosa e plaquinha dos noivos."},
 {k:"q1",n:"Mesa Azul e Dourada com Rosas Vermelhas",c:"15 Anos",f:["q15"],z:"w2",d:"Mesa de bolo em azul e dourado, com aparadores entalhados, vasos de rosas vermelhas, lustres e cenário de salão de espelhos."},
 {k:"q2",n:"Mesa Dourada com Painel de Princesa",c:"15 Anos",f:["q15"],d:"Aparadores dourados, arranjos de flores brancas e azuis, painel temático e bolo de vários andares."},
 {k:"q3",n:"Bolo de 15 Anos Rosa e Dourado",c:"15 Anos",f:["q15"],z:"h2",d:"Bolo de 4 andares com detalhes em dourado e flores, mesa de doces personalizados e painel azul iluminado."},
-{k:"q4",n:"Mesa de 15 Anos Azul e Dourada",c:"15 Anos",f:["q15"],d:"Mesa de bolo com decoração azul e dourada, flores brancas e detalhes clássicos."},
+{k:"q4",n:"Bolo Azul Tiffany e Dourado para 15 Anos",c:"15 Anos",f:["q15"],d:"Bolo azul-tiffany com detalhes dourados, arranjos de flores brancas e mesa clássica com relógio decorativo."},
 {k:"q5",n:"Bolo Azul e Dourado para 15 Anos",c:"15 Anos",f:["q15"],d:"Bolo azul em destaque numa mesa de debutante com flores brancas e detalhes dourados."},
+{k:"q6",n:"Cadeira dos Noivos em Cenário Azul Tiffany",c:"15 Anos",f:["q15"],d:"Cadeira dourada emoldurada por cortinas azul-tiffany, flores brancas e folhagens, ideal para o espaço de homenagens da debutante."},
+{k:"q7",n:"Mesa de Debutante Dourada com Flores Rosas",c:"15 Anos",f:["q15"],d:"Mesa principal dourada com bolo preto e dourado, arranjos de rosas e lustres em um salão clássico."},
+{k:"q8",n:"Mesa de Doces Dourada com Arranjos Florais",c:"15 Anos",f:["q15"],d:"Detalhe da mesa de doces com bandejas douradas, flores em tons de rosa e roxo e peças decorativas."},
+{k:"q9",n:"Mesa de 15 Anos Dourada com Doces",c:"15 Anos",f:["q15"],d:"Mesa de doces com bandejas ornamentadas, arranjos florais em tons de rosa e dourado e lembrancinhas personalizadas."},
+{k:"q10",n:"Bolo de 15 Anos com Tema de Cinderela",c:"15 Anos",f:["q15"],d:"Bolo de vários andares com detalhes dourados e carruagem, diante de painel azul estrelado e mesa de debutante."},
 {k:"jardim",n:"Festa Rei Leão na Savana",c:"Infantil de Luxo",f:["inf"],d:"Painel temático em tons de pôr do sol, bolo de 4 andares, mesa de doces, personagens em tamanho grande e mesa de vime."},
-{k:"t5",n:"Festa Branca de Neve Vermelho e Dourado",c:"Infantil de Luxo",f:["inf"],z:"w2",d:"Painel redondo, arranjos de rosas vermelhas, bolo, doces em suportes de acrílico e arco de balões vermelhos e dourados."},
-{k:"bela",n:"Mesa de Luxo com Velas e Flores",c:"Mesas de luxo",f:["cas","corp"],z:"w2",d:"Mesa posta para festa, com velas e arranjos de flores em composição elegante."},
-{k:"t1",n:"Mesa Clássica com Flores",c:"Mesas de luxo",f:["corp"],d:"Mesa com vaso de flores e velas, para jantares e recepções."},
-{k:"t2",n:"Arranjo Floral ao Ar Livre",c:"Mesas de luxo",f:["cas"],d:"Arranjo floral que decora um evento ao ar livre."},
-{k:"t3",n:"Arranjos Roxos para Mesa",c:"Mesas de luxo",f:["corp"],d:"Vaso com flores roxas sobre mesa decorada."},
-{k:"t7",n:"Painel Lilás Decorado",c:"Painéis e cenografia",f:["corp"],z:"w2",d:"Painel decorativo em tons de lilás para fundo de mesa e fotos."},
-{k:"m1",n:"Mesas e Cadeiras para Salão",c:"Mesas e cadeiras",f:["mesa","corp"],z:"w2",d:"Aluguel de mesas e cadeiras para salões e festas. Informe a quantidade de convidados e montamos o orçamento."},
-{k:"m2",n:"Mesas Redondas com Toalha Branca",c:"Mesas e cadeiras",f:["mesa"],d:"Mesas e cadeiras cobertas com toalhas brancas, prontas para receber seus convidados."},
-{k:"m3",n:"Mesas e Cadeiras para Casamento",c:"Mesas e cadeiras",f:["mesa","cas"],d:"Conjunto de mesas e cadeiras para recepções e cerimônias, com montagem no local."},
-{k:"m4",n:"Mesas e Cadeiras ao Ar Livre",c:"Mesas e cadeiras",f:["mesa","corp"],z:"w2",d:"Mesas, cadeiras e tendas para eventos ao ar livre."}];
-const COLS=[["cas","Casamentos","c1","Palcos, mesas e arranjos florais para a cerimônia e a recepção."],["q15","15 Anos","q1","Balões, flores e mesas de doces para a festa de debutante."],["inf","Infantil de Luxo","jardim","Balões, painéis e mesas cheias de personalidade."],["corp","Corporativo","t7","Cenários, painéis e mesas para eventos e confraternizações."],["mesa","Mesas e Cadeiras","m1","Locação de mesas e cadeiras para qualquer evento."]];
+{k:"t5",n:"Festa Branca de Neve Vermelho e Dourado",c:"Infantil de Luxo",f:["inf"],z:"w2",d:"Painel redondo, arranjos de rosas vermelhas, bolo, doces em suportes de acrílico e arco de balões vermelhos e dourados."}];
+const COLS=[["cas","Casamentos","w1","Palcos, mesas e arranjos florais para a cerimônia e a recepção."],["q15","15 Anos","q1","Balões, flores e mesas de doces para a festa de debutante."],["inf","Infantil de Luxo","jardim","Balões, painéis e mesas cheias de personalidade."]];
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 const wa=t=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
 $$("[data-wa]").forEach(a=>{a.href=wa("Olá! Vi o catálogo de decorações no site e gostaria de solicitar um orçamento.");a.target="_blank";a.rel="noopener"});
@@ -422,8 +416,9 @@ $("#th").onclick=e=>{const b=e.target.closest("[data-y]");if(b)det(+b.dataset.y)
 $("#xx").onclick=fim;md.onclick=e=>{if(e.target===md)fim()};
 
 /* galeria e lightbox */
-const GAL=["m1","c1","w1","w2","w3","q1","t5","bela","c2","jardim","q2","t1","c3","t7","q3","q4","q5","t3","c4","t2","m2","m3","m4","t4","t6"];
-$("#gal").innerHTML=GAL.map((k,i)=>`<button data-g="${i}" aria-label="Ampliar foto"><img src="${IMG[k]}" alt="Decoração de festa Dutra Festa" loading="lazy"></button>`).join("");
+const GAL=["w1","w2","w3","w4","q1","t5","jardim","q2","q3","q4","q5","q6","q7","q8","q9","q10"];
+const GAL_ALT=Object.fromEntries(ITEMS.map(i=>[i.k,i.n]));
+$("#gal").innerHTML=GAL.map((k,i)=>`<button data-g="${i}" aria-label="Ampliar foto"><img src="${IMG[k]}" alt="${GAL_ALT[k]||'Decoração de festa Dutra Festa'}" loading="lazy"></button>`).join("");
 const lb=$("#lb"),li=lb.querySelector("img"),cap=lb.querySelector("figcaption");let cur=0;
 function show(i){cur=(i+GAL.length)%GAL.length;li.src=IMG[GAL[cur]];cap.textContent=`${cur+1} / ${GAL.length}`}
 function lopen(i){show(i);lb.classList.add("on");document.body.style.overflow="hidden"}
@@ -448,7 +443,7 @@ bg.onclick=()=>tog(!mn.classList.contains("open"));mn.onclick=e=>{if(e.target.cl
 const rm=matchMedia("(prefers-reduced-motion:reduce)").matches,hbg=$("#hbg"),dimg=$("#dimg");
 function sc(){const y=scrollY;hd.classList.toggle("solid",y>60);if(rm)return;if(y<innerHeight*1.2){hbg.style.transform=`translateY(${y*.12}px)`}
 const r=dimg.parentElement.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)dimg.style.transform=`translateY(${(r.top-innerHeight/2)*-.05}px)`}
-if(rm)hbg.pause();sc();addEventListener("scroll",sc,{passive:true});
+if(rm){hbg.pause();dimg.pause()}else{new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?dimg.play().catch(()=>{}):dimg.pause()),{threshold:.1}).observe(dimg.parentElement)}sc();addEventListener("scroll",sc,{passive:true});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
 $$(".rv,#steps").forEach(el=>io.observe(el));
 </script>
