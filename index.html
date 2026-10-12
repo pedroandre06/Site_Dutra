@@ -229,10 +229,10 @@ header.solid:before,header.om:before{background:rgba(12,10,10,.86);border-bottom
 /* ---------- galeria ---------- */
 .gal{columns:3;column-gap:18px}
 .gal button{position:relative;display:block;width:100%;margin:0 0 18px;padding:0;border:0;overflow:hidden;cursor:zoom-in;break-inside:avoid;background:var(--sand);border-radius:12px;box-shadow:0 20px 34px -26px var(--shadow)}
-.gal img{width:100%;height:auto;transition:transform 1s var(--ease),filter .5s}
+.gal img,.gal video{display:block;width:100%;height:auto;transition:transform 1s var(--ease),filter .5s}
 .gal button:after{content:"+";position:absolute;right:14px;bottom:14px;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:rgba(21,8,8,.5);border:1px solid rgba(233,211,164,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:var(--champ);font-size:1.4rem;line-height:1;
   opacity:0;transform:scale(.8);transition:opacity .35s,transform .45s var(--ease)}
-.gal button:hover img,.gal button:focus-visible img{transform:scale(1.06);filter:brightness(.88)}
+.gal button:hover img,.gal button:focus-visible img,.gal button:hover video,.gal button:focus-visible video{transform:scale(1.06);filter:brightness(.88)}
 .gal button:hover:after,.gal button:focus-visible:after{opacity:1;transform:none}
 @media(hover:none){.gal button:after{opacity:1;transform:none}}
 @media(max-width:900px){.gal{columns:2;column-gap:10px}.gal button{margin-bottom:10px}}
@@ -307,8 +307,8 @@ form .cta{grid-column:1/-1;width:100%;min-height:62px;font-size:.92rem}
 .lb{position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;background:rgba(14,4,6,.94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility 0s .35s}
 .lb.on{opacity:1;visibility:visible;transition:opacity .35s var(--ease)}
-.lb img{max-width:92vw;max-height:84vh;object-fit:contain;border-radius:10px;box-shadow:0 40px 80px -30px #000;transform:scale(.94);transition:transform .5s var(--ease)}
-.lb.on img{transform:none}
+.lb img,.lb video{max-width:92vw;max-height:84vh;object-fit:contain;border-radius:10px;box-shadow:0 40px 80px -30px #000;transform:scale(.94);transition:transform .5s var(--ease)}
+.lb.on img,.lb.on video{transform:none}
 .lb img.swap{animation:swap .4s var(--ease)}
 .lb button{position:absolute;width:50px;height:50px;border-radius:50%;border:1px solid rgba(233,211,164,.45);background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;transition:background .3s,transform .3s var(--ease)}
 .lb button:hover{background:rgba(212,175,55,.38)}
@@ -362,6 +362,8 @@ form .cta{grid-column:1/-1;width:100%;min-height:62px;font-size:.92rem}
 <video class="bgi on" id="hbg" autoplay muted playsinline preload="auto" poster="poster.jpeg" src="hero.mp4" aria-label="Decoração de festa Dutra Festa"></video>
 <video class="bgi" id="hbg2" muted playsinline preload="metadata" poster="poster.jpeg" src="Unicorn_birthday_party_setup_20261012000139.mp4" aria-hidden="true"></video>
 <video class="bgi" id="hbg3" muted playsinline preload="metadata" poster="poster.jpeg" src="Birthday_party_table_with_cake_20261012003714.mp4" aria-hidden="true"></video>
+<video class="bgi" id="hbg4" muted playsinline preload="metadata" poster="poster.jpeg" src="Dessert_table_at_luxury_event_20261012010516.mp4" aria-hidden="true"></video>
+<video class="bgi" id="hbg5" muted playsinline preload="metadata" poster="poster.jpeg" src="Rack_focus_reveals_wedding_cake_20261012011545.mp4" aria-hidden="true"></video>
 
 <div class="confetti" aria-hidden="true"><i class="cf" style="left:43%;top:29%;width:8px;height:8px;background:#e6c78a;animation-delay:3.3s"></i><i class="cf rt" style="left:30%;top:90%;width:10px;height:10px;background:#e6c78a;animation-delay:2.3s;--r:6deg"></i><i class="cf st" style="left:30%;top:15%;width:10px;height:10px;background:#f3e2c4;animation-delay:1.7s"></i><i class="cf" style="left:17%;top:83%;width:8px;height:8px;background:#c09a57;animation-delay:2.3s"></i><i class="cf st" style="left:65%;top:78%;width:8px;height:8px;background:#f3e2c4;animation-delay:2.3s"></i><i class="cf rt" style="left:48%;top:48%;width:6px;height:6px;background:#e6c78a;animation-delay:3.1s;--r:10deg"></i><i class="cf st" style="left:75%;top:48%;width:10px;height:10px;background:#c09a57;animation-delay:2.9s"></i><i class="cf" style="left:79%;top:19%;width:6px;height:6px;background:#e6c78a;animation-delay:3.0s"></i><i class="cf rt" style="left:64%;top:63%;width:6px;height:6px;background:#e6c78a;animation-delay:2.3s;--r:40deg"></i><i class="cf" style="left:13%;top:44%;width:8px;height:8px;background:#e6c78a;animation-delay:2.9s"></i><i class="cf st" style="left:84%;top:83%;width:10px;height:10px;background:#c09a57;animation-delay:2.9s"></i><i class="cf" style="left:46%;top:12%;width:8px;height:8px;background:#f3e2c4;animation-delay:2.4s"></i><i class="cf st" style="left:57%;top:80%;width:8px;height:8px;background:#c09a57;animation-delay:2.7s"></i><i class="cf" style="left:55%;top:78%;width:6px;height:6px;background:#f3e2c4;animation-delay:2.8s"></i></div>
 <div class="wrap">
@@ -433,7 +435,7 @@ form .cta{grid-column:1/-1;width:100%;min-height:62px;font-size:.92rem}
 
 <div class="md" id="md" role="dialog" aria-modal="true" aria-label="Detalhes da decoração"><div class="pn"><img id="mi" alt=""><div class="tx"><small id="mc"></small><h3 id="mn2"></h3><p id="mt"></p><div class="th" id="th"></div><a class="cta cta-g" id="mw" target="_blank" rel="noopener" href="#" style="align-self:flex-start;margin-top:8px">Tenho interesse <i>→</i></a></div></div></div>
 <button class="xx" id="xx" aria-label="Fechar">×</button>
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><img alt=""><button class="n" aria-label="Próxima">›</button><figcaption></figcaption></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ou vídeo ampliado"><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><img alt=""><video muted playsinline controls hidden></video><button class="n" aria-label="Próxima">›</button><figcaption></figcaption></div>
 
 <script>
 /* CONFIGURAÇÃO: troque o número do WhatsApp (DDI + DDD + número, só dígitos) */
@@ -461,6 +463,7 @@ let ITEMS=[
 {k:"t5",n:"Festa Branca de Neve Vermelho e Dourado",c:"Infantil",f:["inf"],z:"w2",d:"Painel redondo, arranjos de rosas vermelhas, bolo, doces em suportes de acrílico e arco de balões vermelhos e dourados."}];
 const VID="Unicorn_birthday_party_setup_20261012000139.mp4";
 let COLS=[["cas","Casamentos","w1","Palcos, mesas e arranjos florais para a cerimônia e a recepção."],["q15","15 Anos","q1","Balões, flores e mesas de doces para a festa de debutante."],["inf","Infantil","jardim","Balões, painéis e mesas cheias de personalidade.",VID]];
+COLS.find(c=>c[0]==="cas").push("Rack_focus_reveals_wedding_cake_20261012011545.mp4");
 const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
 const wa=t=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
 $$("[data-wa]").forEach(a=>{a.href=wa("Olá! Vi o catálogo de decorações no site e gostaria de solicitar um orçamento.");a.target="_blank";a.rel="noopener"});
@@ -477,15 +480,15 @@ const thumbs=f=>{const seen=new Set();return ITEMS.filter(i=>i.f.includes(f)).ma
 $("#list").innerHTML=COLS.map(([f,n,k,d,v],i)=>`<button class="ci${i?"":" on"}" data-f="${f}" data-k="${k}"${v?` data-v="${v}"`:""}><span class="nm">${n}</span><span class="ar" aria-hidden="true">→</span><span class="ds">${d}</span><span class="mn" aria-hidden="true">${thumbs(f)}</span>${v?`<video class="cv" src="${v}" poster="poster.jpeg" muted loop playsinline preload="metadata" aria-hidden="true"></video>`:`<img class="cv" src="${IMG[k]}" alt="" loading="lazy">`}</button>`).join("");
 const pv=$("#pvi"),pvv=$("#pvv"),pbox=pv.parentElement;if(COLS.length){pv.src=IMG[COLS[0][2]];pv.dataset.k=COLS[0][2]}
 pvv.onerror=()=>pbox.classList.remove("vid");
-function prev(b){if(!b)return;$$(".ci").forEach(x=>x.classList.toggle("on",x===b));if(pv.dataset.k==b.dataset.k)return;pv.dataset.k=b.dataset.k;const v=b.dataset.v;
-if(v){if(!pvv.getAttribute("src"))pvv.src=v;pbox.classList.add("vid");if(!rm)pvv.play().catch(()=>{})}
+function prev(b){if(!b)return;$$(".ci").forEach(x=>x.classList.toggle("on",x===b));const v=b.dataset.v||"";if(pv.dataset.k==b.dataset.k&&(pvv.dataset.v||"")==v)return;pv.dataset.k=b.dataset.k;
+if(v){if(pvv.dataset.v!==v){pvv.src=v;pvv.dataset.v=v;pvv.load()}pbox.classList.add("vid");if(!rm)pvv.play().catch(()=>{})}
 else{pbox.classList.remove("vid");pvv.pause();pv.style.opacity=0;setTimeout(()=>{pv.src=IMG[b.dataset.k];pv.style.opacity=""},180)}}
 /* vídeos dos cartões (mobile) só tocam quando visíveis */
 const vio=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&!rm?e.target.play().catch(()=>{}):e.target.pause()),{threshold:.2});
 $$("video.cv").forEach(v=>vio.observe(v));
 $("#list").addEventListener("mouseover",e=>prev(e.target.closest(".ci")));
 $("#list").addEventListener("focusin",e=>prev(e.target.closest(".ci")));
-$("#list").onclick=e=>{const b=e.target.closest(".ci");if(!b)return;filtro=b.dataset.f;chips();lk();$("#catalogo").scrollIntoView()};
+$("#list").onclick=e=>{const b=e.target.closest(".ci");if(!b)return;prev(b);filtro=b.dataset.f;chips();lk();$("#catalogo").scrollIntoView()};
 
 /* catálogo */
 let filtro="all";
@@ -515,11 +518,16 @@ $("#xx").onclick=fim;md.onclick=e=>{if(e.target===md)fim()};
 /* galeria e lightbox */
 const GAL=["w1","w2","w3","w4","q1","t5","jardim","q2","q3","q4","q5","q6","q7","q8","q9"].filter(k=>!OK.size||OK.has(IMG[k]));
 const GAL_ALT=Object.fromEntries(ITEMS.map(i=>[i.k,i.n]));
+const GAL_VIDEOS=[["hero.mp4","Vídeo de decoração Dutra Festa"],["Unicorn_birthday_party_setup_20261012000139.mp4","Festa infantil Unicorn Birthday"],["Birthday_party_table_with_cake_20261012003714.mp4","Mesa de aniversário com bolo"]];
+GAL_VIDEOS.push(["Dessert_table_at_luxury_event_20261012010516.mp4","Mesa de sobremesas em evento de luxo"]);
+GAL_VIDEOS.push(["Rack_focus_reveals_wedding_cake_20261012011545.mp4","Bolo de casamento em destaque"]);
+GAL_VIDEOS.forEach(([src,title])=>setTimeout(()=>{const i=GAL.length;GAL.push(`video:${src}`);$("#gal").insertAdjacentHTML("beforeend",`<button data-g="${i}" aria-label="Reproduzir ${title}"><video src="${src}" poster="poster.jpeg" muted loop playsinline preload="metadata" aria-hidden="true"></video></button>`);gvio.observe($("#gal").lastElementChild.querySelector("video"))},0));
+const gvio=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?e.target.play().catch(()=>{}):e.target.pause()),{threshold:.2});$$("#gal video").forEach(v=>gvio.observe(v));
 $("#gal").innerHTML=GAL.map((k,i)=>`<button data-g="${i}" aria-label="Ampliar foto"><img src="${IMG[k]}" alt="${GAL_ALT[k]||'Decoração de festa Dutra Festa'}" loading="lazy"></button>`).join("");
-const lb=$("#lb"),li=lb.querySelector("img"),cap=lb.querySelector("figcaption");let cur=0,lfl=null;
-function show(i){cur=(i+GAL.length)%GAL.length;li.src=IMG[GAL[cur]];replay(li);cap.textContent=`${cur+1} / ${GAL.length}`}
+const lb=$("#lb"),li=lb.querySelector("img"),lv=lb.querySelector("video"),cap=lb.querySelector("figcaption");let cur=0,lfl=null;
+function show(i){cur=(i+GAL.length)%GAL.length;const k=GAL[cur];if(k.startsWith("video:")){li.hidden=true;lv.hidden=false;lv.pause();lv.src=k.slice(6);lv.currentTime=0;lv.play().catch(()=>{});cap.textContent=`${GAL_VIDEOS.find(v=>v[0]===k.slice(6))[1]} · ${cur+1} / ${GAL.length}`}else{lv.pause();lv.hidden=true;li.hidden=false;li.src=IMG[k];replay(li);cap.textContent=`${cur+1} / ${GAL.length}`}}
 function lopen(i){lfl=document.activeElement;show(i);lb.classList.add("on");document.body.style.overflow="hidden";setTimeout(()=>lb.querySelector(".x").focus(),80)}
-function lclose(){if(!lb.classList.contains("on"))return;lb.classList.remove("on");document.body.style.overflow="";if(lfl&&lfl.focus)lfl.focus()}
+function lclose(){if(!lb.classList.contains("on"))return;lv.pause();lb.classList.remove("on");document.body.style.overflow="";if(lfl&&lfl.focus)lfl.focus()}
 $("#gal").onclick=e=>{const b=e.target.closest("[data-g]");if(b)lopen(+b.dataset.g)};
 lb.querySelector(".x").onclick=lclose;lb.querySelector(".p").onclick=()=>show(cur-1);lb.querySelector(".n").onclick=()=>show(cur+1);
 lb.onclick=e=>{if(e.target===lb)lclose()};
@@ -543,6 +551,8 @@ Promise.all([...new Set(Object.values(IMG))].map(src=>new Promise(r=>{const m=ne
 const hd=$("#hd"),mn=$("#mn"),bg=$("#bg");
 function tog(o){mn.classList.toggle("open",o);hd.classList.toggle("om",o);bg.setAttribute("aria-expanded",o);bg.setAttribute("aria-label",o?"Fechar menu":"Abrir menu");document.body.style.overflow=o?"hidden":""}
 bg.onclick=()=>tog(!mn.classList.contains("open"));mn.onclick=e=>{if(e.target.closest("a"))tog(false)};
+const d3=document.createElement("video");d3.id="dimg3";d3.muted=true;d3.playsInline=true;d3.preload="metadata";d3.poster="poster.jpeg";d3.src="Dessert_table_at_luxury_event_20261012010516.mp4";d3.setAttribute("aria-label","Mesa de sobremesas em evento de luxo");$(".det .im").append(d3);
+const d4=document.createElement("video");d4.id="dimg4";d4.muted=true;d4.playsInline=true;d4.preload="metadata";d4.poster="poster.jpeg";d4.src="Rack_focus_reveals_wedding_cake_20261012011545.mp4";d4.setAttribute("aria-label","Bolo de casamento em destaque");$(".det .im").append(d4);
 const rm=matchMedia("(prefers-reduced-motion:reduce)").matches,hvs=[...$$(".hero .bgi")],dvids=[...$$(".det .im>video")],dimg=dvids[0];let di=0;
 function sc(){const y=scrollY;hd.classList.toggle("solid",y>60);if(rm)return;if(y<innerHeight*1.2){hvs.forEach(v=>v.style.transform=`translateY(${y*.12}px)`)}
 const r=dimg.parentElement.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)dimg.style.transform=`translateY(${(r.top-innerHeight/2)*-.05}px)`}
