@@ -553,6 +553,7 @@ function tog(o){mn.classList.toggle("open",o);hd.classList.toggle("om",o);bg.set
 bg.onclick=()=>tog(!mn.classList.contains("open"));mn.onclick=e=>{if(e.target.closest("a"))tog(false)};
 const d3=document.createElement("video");d3.id="dimg3";d3.muted=true;d3.playsInline=true;d3.preload="metadata";d3.poster="poster.jpeg";d3.src="Dessert_table_at_luxury_event_20261012010516.mp4";d3.setAttribute("aria-label","Mesa de sobremesas em evento de luxo");$(".det .im").append(d3);
 const d4=document.createElement("video");d4.id="dimg4";d4.muted=true;d4.playsInline=true;d4.preload="metadata";d4.poster="poster.jpeg";d4.src="Rack_focus_reveals_wedding_cake_20261012011545.mp4";d4.setAttribute("aria-label","Bolo de casamento em destaque");$(".det .im").append(d4);
+const d5=document.createElement("video");d5.id="dimg5";d5.muted=true;d5.playsInline=true;d5.preload="metadata";d5.poster="poster.jpeg";d5.src="hero.mp4";d5.setAttribute("aria-label","Vídeo principal de decoração Dutra Festa");$(".det .im").append(d5);
 const rm=matchMedia("(prefers-reduced-motion:reduce)").matches,hvs=[...$$(".hero .bgi")],dvids=[...$$(".det .im>video")],dimg=dvids[0];let di=0;
 function sc(){const y=scrollY;hd.classList.toggle("solid",y>60);if(rm)return;if(y<innerHeight*1.2){hvs.forEach(v=>v.style.transform=`translateY(${y*.12}px)`)}
 const r=dimg.parentElement.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)dimg.style.transform=`translateY(${(r.top-innerHeight/2)*-.05}px)`}
